@@ -1,0 +1,482 @@
+/* planner.css: Add styles here later. */
+/* =========================================
+   HABESHA EXAM CENTER
+   File: planner.css
+   Purpose: Study planner and task management
+========================================= */
+
+/* Page header */
+
+.planner-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-6);
+}
+
+.planner-header h1 {
+  margin-bottom: var(--space-2);
+  color: var(--color-navy);
+  font-size: clamp(1.7rem, 4vw, 2.3rem);
+}
+
+.planner-header p {
+  max-width: 680px;
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+}
+
+/* Summary statistics */
+
+.planner-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.planner-stat {
+  min-width: 0;
+  padding: var(--space-5);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.planner-stat-label {
+  display: block;
+  margin-bottom: var(--space-2);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+}
+
+.planner-stat-value {
+  display: block;
+  color: var(--color-navy);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 800;
+  overflow-wrap: anywhere;
+}
+
+.planner-stat.overdue .planner-stat-value {
+  color: var(--color-danger);
+}
+
+.planner-stat.completed .planner-stat-value {
+  color: var(--color-success);
+}
+
+/* Main layout */
+
+.planner-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.75fr);
+  align-items: start;
+  gap: var(--space-5);
+}
+
+.planner-main-column,
+.planner-side-column {
+  display: grid;
+  gap: var(--space-5);
+  min-width: 0;
+}
+
+/* Planner panels */
+
+.planner-panel {
+  min-width: 0;
+  padding: var(--space-5);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.planner-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-4);
+}
+
+.planner-panel-header h2,
+.planner-panel-header h3 {
+  margin: 0;
+  color: var(--color-navy);
+  font-size: var(--font-size-lg);
+}
+
+/* Create or edit task form */
+
+.planner-form {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.planner-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+.planner-form .form-group {
+  min-width: 0;
+  margin: 0;
+}
+
+.planner-form .full-width {
+  grid-column: 1 / -1;
+}
+
+.planner-form input,
+.planner-form select,
+.planner-form textarea {
+  width: 100%;
+}
+
+.planner-form-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-2);
+}
+
+/* Filter bar */
+
+.planner-filters {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
+}
+
+.planner-filters select,
+.planner-filters input {
+  min-width: 150px;
+  max-width: 100%;
+}
+
+.planner-filter-label {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+}
+
+/* Task list */
+
+.planner-task-list {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.planner-task {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  min-width: 0;
+  padding: var(--space-4);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition:
+    border-color var(--transition-fast),
+    background var(--transition-fast);
+}
+
+.planner-task:hover {
+  border-color: #bfdbfe;
+}
+
+.planner-task.is-completed {
+  background: var(--color-background);
+}
+
+.planner-task-checkbox {
+  width: 19px;
+  height: 19px;
+  flex-shrink: 0;
+  margin-top: 3px;
+  cursor: pointer;
+}
+
+.planner-task-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.planner-task-title {
+  display: block;
+  margin-bottom: var(--space-2);
+  color: var(--color-navy);
+  font-size: var(--font-size-md);
+  font-weight: 800;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.planner-task.is-completed .planner-task-title {
+  color: var(--color-text-secondary);
+  text-decoration: line-through;
+}
+
+.planner-task-description {
+  margin-bottom: var(--space-3);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+.planner-task-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.planner-task-date,
+.planner-task-duration,
+.planner-task-subject {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-xs);
+}
+
+/* Priority and status labels */
+
+.planner-priority {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 8px;
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-xs);
+  font-weight: 800;
+}
+
+.planner-priority.low {
+  color: #075985;
+  background: #e0f2fe;
+}
+
+.planner-priority.medium {
+  color: #92400e;
+  background: #fef3c7;
+}
+
+.planner-priority.high {
+  color: #991b1b;
+  background: #fee2e2;
+}
+
+.planner-status {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 8px;
+  color: var(--color-success);
+  background: var(--color-success-bg);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-xs);
+  font-weight: 800;
+}
+
+.planner-status.overdue {
+  color: var(--color-danger);
+  background: var(--color-danger-bg);
+}
+
+/* Task action buttons */
+
+.planner-task-actions {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.planner-icon-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  color: var(--color-text-secondary);
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+
+.planner-icon-button:hover {
+  color: var(--color-primary);
+  background: var(--color-primary-light);
+  border-color: #bfdbfe;
+}
+
+.planner-icon-button.delete:hover {
+  color: var(--color-danger);
+  background: var(--color-danger-bg);
+  border-color: #fecaca;
+}
+
+/* Weekly study summary */
+
+.planner-week-list {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.planner-week-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.planner-week-day {
+  width: 42px;
+  flex-shrink: 0;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-xs);
+  font-weight: 800;
+}
+
+.planner-week-track {
+  flex: 1;
+  height: 9px;
+  overflow: hidden;
+  background: var(--color-surface-muted);
+  border-radius: var(--radius-full);
+}
+
+.planner-week-fill {
+  width: 0;
+  height: 100%;
+  background: var(--color-primary);
+  border-radius: inherit;
+}
+
+.planner-week-count {
+  min-width: 24px;
+  color: var(--color-navy);
+  text-align: right;
+  font-size: var(--font-size-xs);
+  font-weight: 800;
+}
+
+/* Planner tips */
+
+.planner-tip {
+  padding: var(--space-4);
+  color: var(--color-text-secondary);
+  background: var(--color-info-bg);
+  border: 1px solid #bae6fd;
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  line-height: 1.8;
+}
+
+.planner-tip strong {
+  display: block;
+  margin-bottom: var(--space-2);
+  color: var(--color-navy);
+}
+
+/* Empty state */
+
+.planner-empty {
+  padding: var(--space-6) var(--space-4);
+  text-align: center;
+  background: var(--color-background);
+  border: 1px dashed var(--color-border-strong);
+  border-radius: var(--radius-lg);
+}
+
+.planner-empty h3 {
+  margin-bottom: var(--space-2);
+  color: var(--color-navy);
+}
+
+.planner-empty p {
+  margin-bottom: var(--space-4);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+  line-height: 1.8;
+}
+
+/* Confirmation area */
+
+.planner-confirmation {
+  padding: var(--space-3);
+  color: var(--color-success);
+  background: var(--color-success-bg);
+  border: 1px solid #bbf7d0;
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+}
+
+.planner-confirmation:empty {
+  display: none;
+}
+
+/* Responsive */
+
+@media (max-width: 950px) {
+  .planner-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .planner-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .planner-panel {
+    padding: var(--space-4);
+  }
+
+  .planner-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .planner-form .full-width {
+    grid-column: auto;
+  }
+
+  .planner-form-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .planner-form-actions .btn {
+    width: 100%;
+  }
+
+  .planner-filters {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .planner-filters select,
+  .planner-filters input {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .planner-task {
+    flex-wrap: wrap;
+  }
+
+  .planner-task-actions {
+    width: 100%;
+    justify-content: flex-end;
+    padding-top: var(--space-2);
+    border-top: 1px solid var(--color-border);
+  }
+}

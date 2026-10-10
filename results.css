@@ -1,0 +1,495 @@
+/* results.css: Add styles here later. */
+/* =========================================
+   HABESHA EXAM CENTER
+   File: results.css
+   Purpose: Results and answer review pages
+========================================= */
+
+.results-header {
+  margin-bottom: var(--space-6);
+}
+
+.results-header h1 {
+  margin-bottom: var(--space-2);
+  color: var(--color-navy);
+  font-size: clamp(1.7rem, 4vw, 2.3rem);
+}
+
+.results-header p {
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+/* Overall result banner */
+
+.results-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-5);
+  margin-bottom: var(--space-5);
+  padding: clamp(22px, 4vw, 34px);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+}
+
+.results-banner-content {
+  min-width: 0;
+}
+
+.results-banner h2 {
+  margin-bottom: var(--space-2);
+  color: var(--color-navy);
+  font-size: var(--font-size-xl);
+}
+
+.results-banner p {
+  margin: 0;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+.results-score-circle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 132px;
+  height: 132px;
+  flex-shrink: 0;
+  color: var(--color-primary);
+  background: var(--color-primary-light);
+  border: 7px solid #bfdbfe;
+  border-radius: 50%;
+}
+
+.results-score-circle strong {
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.results-score-circle span {
+  margin-top: 4px;
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+}
+
+/* Result score variants */
+
+.results-score-circle.good {
+  color: var(--color-success);
+  background: var(--color-success-bg);
+  border-color: #bbf7d0;
+}
+
+.results-score-circle.average {
+  color: #92400e;
+  background: #fffbeb;
+  border-color: #fde68a;
+}
+
+.results-score-circle.low {
+  color: var(--color-danger);
+  background: var(--color-danger-bg);
+  border-color: #fecaca;
+}
+
+/* Score summary cards */
+
+.results-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.results-stat {
+  min-width: 0;
+  padding: var(--space-5);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.results-stat-label {
+  display: block;
+  margin-bottom: var(--space-2);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+}
+
+.results-stat-value {
+  display: block;
+  color: var(--color-navy);
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+  font-weight: 800;
+  overflow-wrap: anywhere;
+}
+
+.results-stat.correct .results-stat-value {
+  color: var(--color-success);
+}
+
+.results-stat.incorrect .results-stat-value {
+  color: var(--color-danger);
+}
+
+/* Result information */
+
+.results-details {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.results-detail-card {
+  padding: var(--space-5);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.results-detail-card h2,
+.results-detail-card h3 {
+  margin-bottom: var(--space-3);
+  color: var(--color-navy);
+  font-size: var(--font-size-md);
+}
+
+.results-detail-list {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.results-detail-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid var(--color-border);
+  font-size: var(--font-size-sm);
+}
+
+.results-detail-row:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.results-detail-label {
+  color: var(--color-text-secondary);
+}
+
+.results-detail-value {
+  color: var(--color-navy);
+  text-align: right;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+/* Review section */
+
+.results-review {
+  margin-top: var(--space-6);
+}
+
+.results-review-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-4);
+}
+
+.results-review-header h2 {
+  margin-bottom: var(--space-2);
+  color: var(--color-navy);
+  font-size: var(--font-size-xl);
+}
+
+.results-review-header p {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+  line-height: 1.7;
+}
+
+.results-review-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-5);
+}
+
+.results-filter-button {
+  padding: 8px 13px;
+  color: var(--color-text-secondary);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.results-filter-button:hover {
+  border-color: var(--color-primary);
+}
+
+.results-filter-button.active,
+.results-filter-button[aria-pressed="true"] {
+  color: #ffffff;
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+/* Individual question review */
+
+.results-question-list {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.results-question {
+  min-width: 0;
+  padding: clamp(16px, 3vw, 25px);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-border-strong);
+  border-radius: var(--radius-lg);
+}
+
+.results-question.correct {
+  border-left-color: var(--color-success);
+}
+
+.results-question.incorrect {
+  border-left-color: var(--color-danger);
+}
+
+.results-question.unanswered {
+  border-left-color: #d97706;
+}
+
+.results-question-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-4);
+}
+
+.results-question-number {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+  font-weight: 800;
+}
+
+.results-question-status {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 9px;
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-xs);
+  font-weight: 800;
+}
+
+.results-question-status.correct {
+  color: var(--color-success);
+  background: var(--color-success-bg);
+}
+
+.results-question-status.incorrect {
+  color: var(--color-danger);
+  background: var(--color-danger-bg);
+}
+
+.results-question-status.unanswered {
+  color: #92400e;
+  background: #fffbeb;
+}
+
+.results-question-text {
+  margin-bottom: var(--space-4);
+  color: var(--color-navy);
+  font-size: var(--font-size-md);
+  font-weight: 700;
+  line-height: 1.8;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+/* Review answer list */
+
+.results-answer-list {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.results-answer {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  color: var(--color-text);
+  background: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.results-answer.correct-answer {
+  background: var(--color-success-bg);
+  border-color: #86efac;
+}
+
+.results-answer.selected-wrong {
+  background: var(--color-danger-bg);
+  border-color: #fca5a5;
+}
+
+.results-answer-marker {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  color: var(--color-text-secondary);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-xs);
+  font-weight: 800;
+}
+
+.results-answer.correct-answer .results-answer-marker {
+  color: #ffffff;
+  background: var(--color-success);
+  border-color: var(--color-success);
+}
+
+.results-answer.selected-wrong .results-answer-marker {
+  color: #ffffff;
+  background: var(--color-danger);
+  border-color: var(--color-danger);
+}
+
+.results-answer-text {
+  min-width: 0;
+  flex: 1;
+  padding-top: 3px;
+  font-size: var(--font-size-sm);
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+
+.results-answer-note {
+  display: block;
+  margin-top: 4px;
+  font-size: var(--font-size-xs);
+  font-weight: 800;
+}
+
+/* Explanation */
+
+.results-explanation {
+  margin-top: var(--space-4);
+  padding: var(--space-4);
+  color: var(--color-text);
+  background: var(--color-info-bg);
+  border-left: 4px solid var(--color-primary);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-sm);
+  line-height: 1.8;
+}
+
+.results-explanation h3 {
+  margin-bottom: var(--space-2);
+  color: var(--color-navy);
+  font-size: var(--font-size-sm);
+}
+
+.results-explanation p:last-child {
+  margin-bottom: 0;
+}
+
+/* Result actions */
+
+.results-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+}
+
+.results-actions .btn {
+  min-width: 150px;
+}
+
+/* Empty or missing result */
+
+.results-empty {
+  padding: var(--space-7) var(--space-5);
+  text-align: center;
+  background: var(--color-surface);
+  border: 1px dashed var(--color-border-strong);
+  border-radius: var(--radius-lg);
+}
+
+.results-empty h2 {
+  margin-bottom: var(--space-3);
+  color: var(--color-navy);
+}
+
+.results-empty p {
+  margin-bottom: var(--space-4);
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+}
+
+/* Responsive */
+
+@media (max-width: 850px) {
+  .results-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .results-details {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .results-banner {
+    align-items: flex-start;
+    flex-direction: column-reverse;
+  }
+
+  .results-score-circle {
+    width: 108px;
+    height: 108px;
+  }
+
+  .results-score-circle strong {
+    font-size: 1.7rem;
+  }
+
+  .results-stat {
+    padding: var(--space-4);
+  }
+
+  .results-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .results-actions .btn {
+    width: 100%;
+  }
+}

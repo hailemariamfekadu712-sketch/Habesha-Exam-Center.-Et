@@ -1,0 +1,507 @@
+/* selection.css: Add styles here later. */
+/* =========================================
+   HABESHA EXAM CENTER
+   File: selection.css
+   Purpose: Grade, region, stream and subject
+   selection pages
+========================================= */
+
+/* Page introduction */
+
+.selection-header {
+  margin-bottom: var(--space-6);
+}
+
+.selection-header h1 {
+  margin-bottom: var(--space-2);
+  color: var(--color-navy);
+  font-size: clamp(1.7rem, 4vw, 2.3rem);
+}
+
+.selection-header p {
+  max-width: 700px;
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+}
+
+/* Step indicator */
+
+.selection-steps {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-6);
+  overflow-x: auto;
+}
+
+.selection-step {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-shrink: 0;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+}
+
+.selection-step-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  color: var(--color-text-secondary);
+  background: var(--color-surface-muted);
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  font-weight: 800;
+}
+
+.selection-step.active {
+  color: var(--color-primary);
+  font-weight: 800;
+}
+
+.selection-step.active .selection-step-number {
+  color: #ffffff;
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.selection-step.completed .selection-step-number {
+  color: #ffffff;
+  background: var(--color-success);
+  border-color: var(--color-success);
+}
+
+.selection-step-line {
+  width: 35px;
+  height: 1px;
+  flex-shrink: 0;
+  background: var(--color-border);
+}
+
+/* Selection section */
+
+.selection-section {
+  margin-bottom: var(--space-7);
+}
+
+.selection-section-title {
+  margin-bottom: var(--space-2);
+  color: var(--color-navy);
+  font-size: var(--font-size-xl);
+}
+
+.selection-section-description {
+  margin-bottom: var(--space-4);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+  line-height: 1.7;
+}
+
+/* Grade cards */
+
+.grade-selection-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+.grade-option {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+  min-height: 190px;
+  padding: var(--space-5);
+  color: var(--color-text);
+  text-align: left;
+  background: var(--color-surface);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition:
+    border-color var(--transition-fast),
+    background var(--transition-fast),
+    box-shadow var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.grade-option:hover {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.grade-option.selected,
+.grade-option[aria-pressed="true"] {
+  background: var(--color-primary-light);
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.08);
+}
+
+.grade-option:focus-visible,
+.region-option:focus-visible,
+.stream-option:focus-visible,
+.subject-option:focus-visible {
+  outline: 3px solid rgba(37, 99, 235, 0.35);
+  outline-offset: 3px;
+}
+
+.grade-option-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  margin-bottom: var(--space-4);
+  color: var(--color-primary);
+  background: var(--color-surface-muted);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-xl);
+  font-weight: 800;
+}
+
+.grade-option.selected .grade-option-number {
+  color: #ffffff;
+  background: var(--color-primary);
+}
+
+.grade-option-title {
+  margin-bottom: var(--space-2);
+  color: var(--color-navy);
+  font-size: var(--font-size-lg);
+  font-weight: 800;
+}
+
+.grade-option-description {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+  line-height: 1.6;
+}
+
+.grade-option-check {
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+  display: none;
+  color: var(--color-primary);
+  font-size: var(--font-size-lg);
+  font-weight: 800;
+}
+
+.grade-option.selected .grade-option-check {
+  display: block;
+}
+
+/* Region and stream choices */
+
+.region-selection-grid,
+.stream-selection-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+.region-option,
+.stream-option {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  min-width: 0;
+  padding: var(--space-5);
+  color: var(--color-text);
+  text-align: left;
+  background: var(--color-surface);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition:
+    border-color var(--transition-fast),
+    background var(--transition-fast);
+}
+
+.region-option:hover,
+.stream-option:hover {
+  border-color: var(--color-primary);
+}
+
+.region-option.selected,
+.stream-option.selected,
+.region-option[aria-pressed="true"],
+.stream-option[aria-pressed="true"] {
+  background: var(--color-primary-light);
+  border-color: var(--color-primary);
+}
+
+.selection-option-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  color: var(--color-primary);
+  background: var(--color-surface-muted);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-lg);
+  font-weight: 800;
+}
+
+.selection-option-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.selection-option-title {
+  display: block;
+  margin-bottom: var(--space-2);
+  color: var(--color-navy);
+  font-size: var(--font-size-md);
+  font-weight: 800;
+}
+
+.selection-option-description {
+  display: block;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+  line-height: 1.7;
+}
+
+/* Subjects */
+
+.subject-selection-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-3);
+}
+
+.subject-option {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-width: 0;
+  min-height: 76px;
+  padding: var(--space-4);
+  color: var(--color-text);
+  text-align: left;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition:
+    border-color var(--transition-fast),
+    background var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.subject-option:hover {
+  background: var(--color-surface-muted);
+  border-color: var(--color-primary);
+}
+
+.subject-option.selected,
+.subject-option[aria-pressed="true"] {
+  background: var(--color-primary-light);
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 1px var(--color-primary);
+}
+
+.subject-option-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  color: var(--color-primary);
+  background: var(--color-surface-muted);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  font-weight: 800;
+}
+
+.subject-option-name {
+  min-width: 0;
+  color: var(--color-navy);
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+/* Exam type cards */
+
+.exam-type-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+.exam-type-card {
+  padding: var(--space-5);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.exam-type-card h3 {
+  margin-bottom: var(--space-2);
+  color: var(--color-navy);
+}
+
+.exam-type-card p {
+  margin-bottom: var(--space-4);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+  line-height: 1.7;
+}
+
+/* Selection summary */
+
+.selection-summary {
+  margin-top: var(--space-5);
+  padding: var(--space-5);
+  background: var(--color-surface-muted);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.selection-summary h3 {
+  margin-bottom: var(--space-3);
+  color: var(--color-navy);
+}
+
+.selection-summary-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+.selection-summary-item {
+  min-width: 0;
+}
+
+.selection-summary-label {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-xs);
+}
+
+.selection-summary-value {
+  display: block;
+  color: var(--color-navy);
+  font-size: var(--font-size-sm);
+  font-weight: 800;
+  overflow-wrap: anywhere;
+}
+
+/* Selection controls */
+
+.selection-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  margin-top: var(--space-6);
+}
+
+.selection-actions .btn {
+  min-width: 140px;
+}
+
+.selection-search {
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: var(--space-4);
+}
+
+.selection-search input {
+  width: 100%;
+}
+
+.selection-message {
+  margin-top: var(--space-3);
+  color: var(--color-danger);
+  font-size: var(--font-size-sm);
+}
+
+.selection-message:empty {
+  display: none;
+}
+
+/* Coming soon subject or content */
+
+.selection-coming-soon {
+  padding: var(--space-4);
+  color: var(--color-text-secondary);
+  background: var(--color-background);
+  border: 1px dashed var(--color-border-strong);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  line-height: 1.7;
+}
+
+/* Responsive */
+
+@media (max-width: 850px) {
+  .grade-selection-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .subject-selection-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .selection-summary-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .grade-selection-grid,
+  .region-selection-grid,
+  .stream-selection-grid,
+  .subject-selection-grid,
+  .exam-type-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .grade-option {
+    min-height: auto;
+  }
+
+  .grade-option-number {
+    width: 44px;
+    height: 44px;
+    margin-bottom: var(--space-3);
+  }
+
+  .selection-steps {
+    gap: var(--space-2);
+  }
+
+  .selection-step {
+    font-size: var(--font-size-xs);
+  }
+
+  .selection-step-line {
+    width: 16px;
+  }
+
+  .selection-summary-list {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .selection-actions {
+    align-items: stretch;
+    flex-direction: column-reverse;
+  }
+
+  .selection-actions .btn {
+    width: 100%;
+  }
+}
